@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechStore Online - Producto</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <base href="./" />
+  </head>
+  <body>
+    <header>
+      <table width="100%" border="0" cellpadding="10">
+        <tr>
+          <td>
+            <strong>TechStore Online</strong>
+          </td>
+          <td align="right">
+            <nav aria-label="Menú principal">
+              <a href="index.html">Inicio</a> |
+              <a href="productos.html">Productos</a> |
+              <a href="carrito.html">Carrito</a> |
+              <a href="contacto.html">Contacto</a> |
+              <a href="acerca.html">Acerca de</a>
+            </nav>
+          </td>
+        </tr>
+      </table>
+      <hr />
+    </header>
+
+    <header>
+      <figure>
+        <img src="img/logo.png" alt="Logo de TechStore Online" />
+        <figcaption>TechStore Online</figcaption>
+      </figure>
+      <nav aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="carrito.html">Carrito</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="acerca.html">Acerca de</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <header>
+          <h1>Laptop Gamer MSI KATANA"</h1>
+        </header>
+
+        <picture>
+          <source media="(max-width: 600px)" srcset="img/producto-mobile.jpg" />
+          <source
+            media="(min-width: 601px)"
+            srcset="img/producto-desktop.jpg"
+          />
+          <img
+            src="img/producto-desktop.jpg"
+            alt="Laptop Gamer Pro vista frontal"
+          />
+        </picture>
+
+        <section>
+          <h2>Descripción</h2>
+          <p>
+            La Laptop Gamer Pro 15" ofrece un rendimiento excepcional con su
+            procesador Intel Core i7, tarjeta gráfica NVIDIA RTX 3060 y 16GB de
+            RAM. Perfecta para gaming y tareas exigentes.
+          </p>
+        </section>
+
+        <section>
+          <h2>Audio promocional</h2>
+          <audio controls>
+            <source src="audio/laptop-promo.mp3" type="audio/mpeg" />
+            Tu navegador no soporta el elemento de audio.
+          </audio>
+        </section>
+
+        <section>
+          <h2>Especificaciones técnicas</h2>
+          <table>
+            <caption>
+              Características técnicas de la Laptop Gamer Pro
+            </caption>
+            <thead>
+              <tr>
+                <th>Característica</th>
+                <th>Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>RAM</td>
+                <td>16 GB</td>
+              </tr>
+              <tr>
+                <td>SSD</td>
+                <td>512 GB</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2">Garantía: 1 año</td>
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <hr />
+      <table width="100%" border="0">
+        <tr>
+          <td align="center">
+            <address>
+              TechStore Online, San Cristóbal, República Dominicana
+            </address>
+            <small
+              >&copy; 2026 TechStore Online. Todos los derechos
+              reservados.</small
+            >
+          </td>
+        </tr>
+      </table>
+    </footer>
+  </body>
+</html>

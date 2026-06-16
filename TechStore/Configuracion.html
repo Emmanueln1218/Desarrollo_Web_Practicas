@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechStore Online - Configuración</title>
+    <base href="./" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <center>
+        <figure>
+          <img src="img/logo.png" alt="Logo de TechStore Online" width="120" />
+          <figcaption><strong>TechStore Online</strong></figcaption>
+        </figure>
+      </center>
+
+      <nav aria-label="Menú principal">
+        <table align="center" cellspacing="10">
+          <tr>
+            <td><a href="index.html">Inicio</a></td>
+            <td><a href="productos.html">Productos</a></td>
+            <td><a href="carrito.html">Carrito</a></td>
+            <td><a href="contacto.html">Contacto</a></td>
+            <td><a href="acerca.html">Acerca de</a></td>
+            <td>
+              <a href="configuracion.html"><strong>Configuración</strong></a>
+            </td>
+          </tr>
+        </table>
+      </nav>
+    </header>
+
+    <main align="center">
+      <h1>⚙️ Configuración del Usuario</h1>
+      <p>Ajusta tus preferencias dentro de TechStore Online.</p>
+
+      <br />
+
+      <!-- SECCIÓN DE CONFIGURACIONES -->
+      <table
+        align="center"
+        border="1"
+        cellpadding="12"
+        cellspacing="0"
+        width="65%"
+      >
+        <tr bgcolor="#f4f4f4">
+          <th colspan="2">Preferencias Generales</th>
+        </tr>
+
+        <tr>
+          <td><strong>Modo de visualización</strong></td>
+          <td>
+            <select>
+              <option>Claro</option>
+              <option>Oscuro</option>
+              <option>Automático</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td><strong>Idioma</strong></td>
+          <td>
+            <select>
+              <option>Español</option>
+              <option>Inglés</option>
+              <option>Portugués</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td><strong>Notificaciones</strong></td>
+          <td>
+            <label><input type="checkbox" checked /> Ofertas</label><br />
+            <label><input type="checkbox" /> Nuevos productos</label><br />
+            <label><input type="checkbox" /> Estado del pedido</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td><strong>Privacidad</strong></td>
+          <td>
+            <button
+              onclick="document.getElementById('modalPrivacidad').showModal()"
+            >
+              Ver opciones
+            </button>
+          </td>
+        </tr>
+      </table>
+
+      <br /><br />
+
+      <!-- BOTÓN PARA MODAL PRINCIPAL -->
+      <button onclick="document.getElementById('modalGuardar').showModal()">
+        Guardar cambios
+      </button>
+    </main>
+
+    <!-- ⭐ MODAL 1: PRIVACIDAD ⭐ -->
+    <dialog id="modalPrivacidad">
+      <h2>🔒 Opciones de Privacidad</h2>
+      <p>Controla cómo manejamos tus datos dentro de TechStore Online.</p>
+
+      <ul>
+        <li>✔ No compartimos tu información con terceros.</li>
+        <li>✔ Tus datos están protegidos con cifrado estándar.</li>
+        <li>✔ Puedes solicitar eliminación de datos en cualquier momento.</li>
+      </ul>
+
+      <button onclick="document.getElementById('modalPrivacidad').close()">
+        Cerrar
+      </button>
+    </dialog>
+
+    <!-- ⭐ MODAL 2: GUARDAR CAMBIOS ⭐ -->
+    <dialog id="modalGuardar">
+      <h2>💾 Confirmar cambios</h2>
+      <p>¿Deseas guardar las configuraciones seleccionadas?</p>
+
+      <button onclick="document.getElementById('modalGuardar').close()">
+        Cancelar
+      </button>
+
+      <button onclick="alert('✔ Cambios guardados correctamente')">
+        Guardar
+      </button>
+    </dialog>
+
+    <footer>
+      <hr />
+      <center>
+        <address>TechStore Online, San Cristóbal, República Dominicana</address>
+        <small
+          >&copy; 2026 TechStore Online. Todos los derechos reservados.</small
+        >
+      </center>
+    </footer>
+  </body>
+</html>

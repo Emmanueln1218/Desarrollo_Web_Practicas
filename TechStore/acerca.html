@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Información corporativa, especificaciones técnicas y laboratorio de TechStore Online."
+    />
+    <title>TechStore Online - Acerca de</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <base href="./" />
+  </head>
+
+  <body>
+    <header>
+      <table width="100%" border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td width="30%">
+            <figure style="margin: 0" align="center">
+              <img
+                src="img/logo.png"
+                alt="Logo de TechStore Online"
+                width="120"
+              />
+              <figcaption><strong>TechStore Online</strong></figcaption>
+            </figure>
+          </td>
+
+          <td width="70%" align="right">
+            <nav aria-label="Menú principal">
+              <a href="index.html">Inicio</a> |
+              <a href="productos.html">Productos</a> |
+              <a href="carrito.html">Carrito</a> |
+              <a href="contacto.html">Contacto</a> |
+              <a href="acerca.html" aria-current="page"
+                ><strong>Acerca de</strong></a
+              >
+            </nav>
+          </td>
+        </tr>
+      </table>
+      <hr />
+    </header>
+
+    <main>
+      <!-- TÍTULO CENTRAL -->
+      <h1 align="center">Acerca de Nuestra Empresa</h1>
+
+      <!-- SECCIÓN PRINCIPAL -->
+      <section aria-labelledby="seccion-empresa">
+        <table width="100%" border="0" cellpadding="15" cellspacing="0">
+          <tr>
+            <!-- COLUMNA 1 -->
+            <td width="50%" valign="top" bgcolor="#fdfdfd">
+              <article>
+                <h2>Nuestra Historia</h2>
+                <p>
+                  <small
+                    >Publicación:
+                    <time datetime="2026-06-16"
+                      >16 de junio de 2026</time
+                    ></small
+                  >
+                </p>
+
+                <p>
+                  Fundada en <time datetime="2026-06">junio de 2026</time>,
+                  <strong>TechStore Online</strong> distribuye tecnología
+                  accesible mediante infraestructura web estandarizada en
+                  <abbr title="HyperText Markup Language 5">HTML5</abbr>.
+                </p>
+
+                  <p>
+                    <em
+                      >"Seleccionamos cada producto pensando en mejorar la vida
+                      de nuestros clientes."</em
+                    >
+                  </p>
+                  <footer>— <cite>Wagner Alcantara, CEO</cite></footer>
+                </blockquote>
+
+                <details>
+                  <summary>Cronología de expansión</summary>
+                  <ul>
+                    <li>
+                      <strong>Catálogo:</strong> +2,000 referencias activas.
+                    </li>
+                    <li>
+                      <strong>Distribución:</strong> Cobertura logística en
+                      Latinoamérica.
+                    </li>
+                  </ul>
+                </details>
+
+                <!-- BOTÓN PARA ABRIR MODAL -->
+                <button
+                  onclick="document.getElementById('modalInfo').showModal()"
+                >
+                  Ver más información
+                </button>
+              </article>
+            </td>
+
+            <!-- COLUMNA 2 -->
+            <td width="50%" valign="top" bgcolor="#f9f9f9">
+              <article>
+                <h2>Plan Estratégico</h2>
+
+                <h3>Misión</h3>
+                <p>
+                  Proporcionar tecnología de alta calidad a precios competitivos
+                  con soporte técnico eficiente.
+                </p>
+
+                <h3>Visión</h3>
+                <p>
+                  Ser el e-commerce líder en el mercado tecnológico
+                  hispanohablante.
+                </p>
+
+                <h3>Valores Fundamentales</h3>
+                <dl>
+                  <dt><strong>Innovación</strong></dt>
+                  <dd>Optimización tecnológica continua.</dd>
+
+                  <dt><strong>Calidad</strong></dt>
+                  <dd>Controles estrictos en todo el catálogo.</dd>
+
+                  <dt><strong>Transparencia</strong></dt>
+                  <dd>Precios netos sin costes ocultos.</dd>
+                </dl>
+              </article>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <br />
+      <hr />
+      <br />
+
+      <!-- SECCIÓN SECUNDARIA -->
+      <section aria-labelledby="seccion-operaciones">
+        <table width="100%" border="0" cellpadding="15" cellspacing="0">
+          <tr>
+            <td width="33%" valign="top">
+              <h3>Estructura Organizacional</h3>
+              <ul>
+                <li><strong>Dpto. Técnico:</strong> Desarrollo web.</li>
+                <li><strong>Dpto. Comercial:</strong> Negociación.</li>
+                <li><strong>Dpto. Logística:</strong> Inventario y envíos.</li>
+                <li><strong>Atención al Cliente:</strong> Soporte 24/7.</li>
+              </ul>
+            </td>
+
+            <td width="33%" valign="top" bgcolor="#f4f4f4">
+              <h3>Información Corporativa</h3>
+              <address>
+                <strong>TechStore Online S.A.</strong><br />
+                Calle Nueva Jerusalen, 42, Casa #9<br />
+                San Cristóbal, República Dominicana<br />
+                <abbr title="Registro Nacional de Contribuyentes">RNC</abbr>:
+                123-45678-9<br /><br />
+
+                <strong>Tel:</strong>
+                <a href="tel:+18494532656">+1 (849) 453-2656</a><br />
+                <strong>Email:</strong>
+                <a href="mailto:info@techstoreonline.com"
+                  >info@techstoreonline.com</a
+                >
+              </address>
+            </td>
+
+            <td width="33%" valign="top">
+              <h3>Laboratorio Técnico</h3>
+              <p>
+                Pruebas de hardware, validación de componentes y certificación
+                interna.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <!--  MODAL FUNCIONAL  -->
+      <dialog id="modalInfo">
+        <h2>🛡️ Protege tu Compra</h2>
+        <p>Todos nuestros productos incluyen:</p>
+        <ul>
+          <li>
+            ✅ <strong>Garantía de fábrica</strong> por
+            <time datetime="P365D">1 año</time>
+          </li>
+          <li>✅ <strong>30 días</strong> para devoluciones</li>
+          <li>
+            ✅ <strong>Soporte técnico 24/7</strong> por teléfono, chat y email
+          </li>
+          <li>✅ <strong>Envío asegurado</strong> contra daños o extravíos</li>
+        </ul>
+        <p><strong>Tu satisfacción está 100% garantizada.</strong></p>
+
+        <button onclick="document.getElementById('modalInfo').close()">
+          Cerrar
+        </button>
+      </dialog>
+    </main>
+
+    <footer>
+      <hr />
+      <table width="100%" border="0">
+        <tr>
+          <td align="center">
+            <address>
+              TechStore Online, San Cristóbal, República Dominicana
+            </address>
+            <small
+              >&copy; 2026 TechStore Online. Todos los derechos
+              reservados.</small
+            >
+          </td>
+        </tr>
+      </table>
+    </footer>
+  </body>
+</html>
