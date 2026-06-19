@@ -1,0 +1,98 @@
+<!--## 💻 `producto.html`-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EM DIGITAL - Laptop Gamer MSI KATANA</title>
+    <link rel="stylesheet" href="css/Estilos.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/LogoEmpresa.png" alt="EM DIGITAL" class="logo-img">
+            </a>
+            <h1>EM DIGITAL</h1>
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html" class="active">Productos</a>
+            <a href="carrito.html">Carrito</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="acerca.html">Acerca de</a>
+            <a href="Configuracion.html">Configuración</a>
+        </nav>
+    </header>
+
+    <main>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:40px">
+            <div class="card" style="padding:0;overflow:hidden">
+                <img src="img/index-laptop-gaming.jpg" alt="Laptop Gamer MSI KATANA" style="width:100%;height:auto;max-height:500px;object-fit:cover">
+            </div>
+
+            <div>
+                <h1 style="font-size:2rem;margin-bottom:10px">Laptop Gamer MSI KATANA</h1>
+                <div class="card-price" style="font-size:2.5rem;margin-bottom:20px">$1,500</div>
+                
+                <div class="card" style="padding:25px;margin-bottom:20px">
+                    <h3 style="margin-bottom:12px;font-size:1.2rem">📝 Descripción</h3>
+                    <p style="color:var(--gris);line-height:1.7">
+                        La Laptop Gamer Pro 15" ofrece un rendimiento excepcional con su 
+                        procesador Intel Core i7, tarjeta gráfica NVIDIA RTX 3060 y 16GB de 
+                        RAM. Perfecta para gaming y tareas exigentes.
+                    </p>
+                </div>
+
+                <div style="display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap">
+                    <a href="carrito.html" class="btn btn-full">🛒 Agregar al Carrito</a>
+                    <a href="carrito.html" class="btn btn-secondary btn-full">⚡ Comprar Ahora</a>
+                </div>
+
+                <div style="padding:15px;background:rgba(0,229,255,.05);border:1px solid var(--borde);border-radius:8px">
+                    <p style="margin:0;color:var(--primario);font-weight:500">✓ Envío gratis</p>
+                    <p style="margin:5px 0 0;color:var(--gris);font-size:.9rem">Garantía: 1 año</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="padding:30px;margin-bottom:40px">
+            <h2 style="margin-bottom:20px">🔧 Especificaciones Técnicas</h2>
+            <p style="color:var(--gris);margin-bottom:15px">Características técnicas de la Laptop Gamer Pro</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Procesador</strong></td><td>Intel Core i7</td></tr>
+                        <tr><td><strong>Tarjeta Gráfica</strong></td><td>NVIDIA RTX 3060</td></tr>
+                        <tr><td><strong>RAM</strong></td><td>16 GB</td></tr>
+                        <tr><td><strong>SSD</strong></td><td>512 GB</td></tr>
+                        <tr><td><strong>Pantalla</strong></td><td>15.6" Full HD 144Hz</td></tr>
+                        <tr><td><strong>Sistema Operativo</strong></td><td>Windows 11 Home</td></tr>
+                        <tr><td><strong>Garantía</strong></td><td>1 año</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card" style="padding:30px">
+            <h3 style="margin-bottom:15px">💬 ¿Tienes preguntas sobre este producto?</h3>
+            <p style="color:var(--gris);margin-bottom:15px">Nuestro equipo está listo para ayudarte</p>
+            <a href="contacto.html" class="btn">Contactar Soporte</a>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-brand">EM DIGITAL</p>
+        <p>San Cristóbal, República Dominicana</p>
+        <p>© 2026 EM DIGITAL. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!--## 🛍️ `productos.html`-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EM DIGITAL - Productos</title>
+    <link rel="stylesheet" href="css/Estilos.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/LogoEmpresa.png" alt="EM DIGITAL" class="logo-img">
+            </a>
+            <h1>EM DIGITAL</h1>
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html" class="active">Productos</a>
+            <a href="carrito.html">Carrito</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="acerca.html">Acerca de</a>
+            <a href="Configuracion.html">Configuración</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title">Todos los productos</h1>
+        <p class="page-subtitle">Explora nuestro catálogo completo de tecnología</p>
+
+        <div class="filters">
+            <h3>🔍 Filtros</h3>
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label>Precio</label>
+                    <div class="price-range">
+                        <input type="number" placeholder="Mínimo" min="0">
+                        <input type="number" placeholder="Máximo" min="0">
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label>Marca</label>
+                    <select>
+                        <option value="">Todas las marcas</option>
+                        <option>Samsung</option>
+                        <option>Apple</option>
+                        <option>Dell</option>
+                        <option>HP</option>
+                        <option>Lenovo</option>
+                        <option>Asus</option>
+                        <option>MSI</option>
+                        <option>NVIDIA</option>
+                        <option>AMD</option>
+                        <option>Acer</option>
+                        <option>Razer</option>
+                        <option>Logitech</option>
+                        <option>Sony</option>
+                        <option>LG</option>
+                        <option>Huawei</option>
+                        <option>Xiaomi</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Categoría</label>
+                    <select>
+                        <option value="">Todas</option>
+                        <option>Laptops</option>
+                        <option>Smartphones</option>
+                        <option>Accesorios</option>
+                        <option>Gaming</option>
+                        <option>Almacenamiento</option>
+                        <option>Targetas Graficas</option>
+                        <option>Auriculares</option>
+                        <option>Monitores</option>
+                    </select>
+                </div>
+            </div>
+            <button>Aplicar filtros</button>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="card">
+                <img src="img/Index-laptop.jpg" alt="Laptop Gamer Pro">
+                <div class="card-body">
+                    <h3>Laptop Gamer Pro</h3>
+                    <p>Potente laptop para juegos y tareas exigentes.</p>
+                    <div class="card-price">$1,500</div>
+                    <div class="card-actions">
+                        <a href="producto.html" class="btn">Ver detalles</a>
+                        <a href="carrito.html" class="btn btn-secondary">Agregar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/index-fit.jpg" alt="Smartwatch FitBand 5">
+                <div class="card-body">
+                    <h3>Smartwatch FitBand 5</h3>
+                    <p>Monitoreo de salud y GPS integrado.</p>
+                    <div class="card-price">$129</div>
+                    <div class="card-actions">
+                        <a href="producto.html" class="btn">Ver detalles</a>
+                        <a href="carrito.html" class="btn btn-secondary">Agregar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/index-ssd.jpg" alt="SSD 1TB UltraSpeed">
+                <div class="card-body">
+                    <h3> M.2 1TB UltraSpeed</h3>
+                    <p>Lectura de 3500 MB/s.</p>
+                    <div class="card-price">$119</div>
+                    <div class="card-actions">
+                        <a href="producto.html" class="btn">Ver detalles</a>
+                        <a href="carrito.html" class="btn btn-secondary">Agregar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/index-KINGSTON DataTraveler.jpg" alt="USB 128GB Titan">
+                <div class="card-body">
+                    <h3>USB 128GB KINGSTON</h3>
+                    <p>Compacta y resistente.</p>
+                    <div class="card-price">$19</div>
+                    <div class="card-actions">
+                        <a href="producto.html" class="btn">Ver detalles</a>
+                        <a href="carrito.html" class="btn btn-secondary">Agregar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-brand">EM DIGITAL</p>
+        <p>San Cristóbal, República Dominicana</p>
+        <p>© 2026 EM DIGITAL. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

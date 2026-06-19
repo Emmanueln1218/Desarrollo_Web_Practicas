@@ -1,0 +1,848 @@
+/* ==========================================================================
+ EM DIGITAL - ESTILO TECNOLÓGICO
+   ========================================================================== */
+
+/* IMPORTACIÓN DE FUENTES:
+Cargan los tipos de letra desde un servidor CDN.
+- 'Rajdhani': Se usa para títulos (estilo geométrico y futurista).
+- 'Inter': Se usa para textos normles y párrafos (alta legibilidad).
+*/
+@import url('https://cdn.jsdelivr.net/fontsource/fonts/rajdhani@latest/latin-500-normal.css');
+@import url('https://cdn.jsdelivr.net/fontsource/fonts/rajdhani@latest/latin-600-normal.css');
+@import url('https://cdn.jsdelivr.net/fontsource/fonts/rajdhani@latest/latin-700-normal.css');
+@import url('https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-400-normal.css');
+@import url('https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-500-normal.css');
+@import url('https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-600-normal.css');
+
+/* VARIABLES GLOBALES (:root):
+Centralizan los valores del diseño (colores neon, sombras, radios).
+CAMBIO EN HTML: Si alteras un valor aquí (como --primario), se actualizará 
+automáticamente en todo el HTML donde se use esa variable sin tocar las etiquetas.
+*/
+:root{
+    --fondo:#0a0f1f;
+    --panel:#111827;
+    --primario:#00e5ff;
+    --secundario:#00b8d4;
+    --acento:#7c3aed;
+    --texto:#e5e7eb;
+    --gris:#94a3b8;
+    --borde:rgba(0,229,255,.2);
+    --sombra-neon:0 0 15px rgba(0,229,255,.4);
+    --radio:14px;
+    --transicion:.3s ease;
+    --logo-size:5.0rem;
+    --form-width:440px;
+}
+
+/* RESET UNIVERSAL (*):
+Elimina los márgenes y rellenos por defecto que ponen los navegadores.
+'box-sizing: border-box' asegura que el padding no altere el ancho total de los elementos.
+*/
+*{box-sizing:border-box;margin:0;padding:0}
+
+/* ESTILOS BASE DEL CUERPO (body):
+Define el fondo general con un degradado oscuro fijo y la tipografía base.
+    CAMBIO EN HTML: Afecta a todo el documento dentro de la etiqueta <body>.
+*/
+body{
+    font-family:'Inter','Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#050816 0%,#0a0f1f 50%,#111827 100%);
+    background-attachment:fixed;
+    color:var(--texto);
+    min-height:100vh;
+    line-height:1.6;
+    font-size:20px;
+
+    /* 2. Aplicamos la animación (duración de 15 segundos, infinita y fluida) */
+    animation: movimientoFondo 15s ease infinite;
+}
+
+/* TÍTULOS (h1, h2, h3, h4): 
+Aplica la fuente espacial 'Rajdhani' y el color cian neón a los encabezados.
+    CAMBIO EN HTML: Se aplica automáticamente en cualquier etiqueta <h1>, <h2>, etc.
+*/
+h1,h2,h3,h4{
+    font-family:'Rajdhani',sans-serif;
+    font-weight:600;
+    letter-spacing:.5px;
+    color:var(--primario);
+    line-height:1.2;
+}
+
+/* ENLACES GENERALES (a):
+Quita el subrayado clásico y les asigna el color principal.
+    CAMBIO EN HTML: Afecta a cualquier etiqueta de hipervínculo <a>.
+*/
+a{color:var(--primario);text-decoration:none}
+
+/* ==========================================================================
+===== HEADER (BARRA SUPERIOR) =====
+   ========================================================================== */
+/* CONTENEDOR DEL ENCABEZADO:
+Crea la barra superior flotante usando 'position: sticky' y un efecto de cristal (blur).
+    CAMBIO EN HTML: Requiere la etiqueta estructural <header>.
+*/
+header{
+    display:flex;
+    justify-content:space-between; /*Aqui cambio los botones de su lugar (space-between*/
+    align-items:center;
+    padding:15px 40px;
+    background:rgba(255,255,255,.04);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--borde);
+    position:sticky;
+    top:0;
+    z-index:100;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+/* LOGOTIPO:
+Alinea la imagen y el texto del logo horizontalmente.
+CAMBIO EN HTML: Requiere un contenedor contenedor con la clase class="logo".
+*/
+.logo{display:flex;align-items:center;gap:12px}
+
+
+/* IMAGEN DEL LOGO:
+Transforma la foto del logo en un círculo perfecto con brillo neón periférico.
+    CAMBIO EN HTML: La etiqueta <img> dentro del logo debe llevar class="logo-img".
+*/
+.logo-img{
+    width:var(--logo-size);
+    height:var(--logo-size);
+    border-radius:100%;
+    object-fit:cover;
+    border:0.5px solid var(--primario);
+    box-shadow:var(--sombra-neon);
+    flex-shrink:0;
+}
+
+/* TEXTO DEL LOGO:
+Asigna tamaño gigante y un resplandor luminoso (text-shadow) al nombre de la marca.
+*/
+.logo h1{font-size:3.1rem;margin:0;text-shadow:0 0 10px rgba(0,229,255,.6)}
+
+/* MENÚ DE NAVEGACIÓN (nav):
+Espacia los enlaces horizontalmente y los centra de forma fluida.
+    CAMBIO EN HTML: Requiere el contenedor semántico <nav>.
+*/
+nav{display:flex;gap:25px;flex-wrap:wrap;align-items:center; justify-content:center}  /*Aqui cambio la posicion del logo*/
+
+/* ENLACES DEL MENÚ:
+Crea la base para los links interactivos del menú.
+*/
+nav a{
+    color:var(--texto);
+    font-weight:500;
+    font-size:.95rem;
+    position:relative;
+    transition:color var(--transicion);
+}
+nav a:hover{color:var(--primario)}
+
+/* EFECTO DE SUBRAYADO ANIMADO (::after):
+Genera una línea neón invisible debajo de cada link que se expande al pasar el cursor.
+*/
+nav a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-6px;
+    background:var(--primario);
+    transition:width var(--transicion);
+}
+nav a:hover::after{width:100%}
+
+/* ESTADO ACTIVO (PÁGINA ACTUAL):
+   Mantiene fija la línea expansiva en la página donde se encuentra actualmente el usuario.
+    CAMBIO EN HTML: Debes añadir manualmente class="active" al enlace de la página activa.
+*/
+nav a.active{color:var(--primario)}
+nav a.active::after{width:100%}
+
+/* ==========================================================================
+===== MAIN (CONTENIDO PRINCIPAL) =====
+   ========================================================================== */
+/* CONTENEDOR CENTRAL DE PÁGINA:
+   Establece el ancho máximo de la web y centra el contenido en pantallas grandes.
+    CAMBIO EN HTML: Envuelve el cuerpo de tus páginas en la etiqueta <main>.
+*/
+main{max-width:1200px;margin:40px auto;padding:0 20px}
+
+/* TÍTULOS DE PÁGINA:
+   Estilo centralizado con sombra de luz para los encabezados principales del sitio.
+    CAMBIO EN HTML: Añade class="page-title" a tus etiquetas <h1> principales.
+*/
+.page-title{
+    text-align:center;
+    font-size:2.2rem;
+    margin-bottom:10px;
+    text-shadow:0 0 15px rgba(0,229,255,.5);
+}
+
+/* SUBTÍTULOS DE PÁGINA:
+   Texto descriptivo secundario en color gris apagado para equilibrar el brillo.
+    CAMBIO EN HTML: Se activa usando class="page-subtitle" en un párrafo o etiqueta <p>.
+*/
+.page-subtitle{
+    text-align:center;
+    color:var(--gris);
+    margin-bottom:40px;
+    font-size:1rem;
+}
+
+/* ==========================================================================
+   ===== HERO (BANNER DE BIENVENIDA) =====
+   ========================================================================== */
+/* SECCIÓN HERO:
+   Crea una marquesina futurista con un gradiente radial de fondo simulando un radar.
+    CAMBIO EN HTML: El bloque contenedor debe llevar la clase class="hero".
+*/
+.hero{
+    text-align:center;
+    padding:60px 20px;
+    background:rgba(255,255,255,.03);
+    border:1px solid var(--borde);
+    border-radius:var(--radio);
+    margin-bottom:40px;
+    backdrop-filter:blur(10px);
+    position:relative;
+    overflow:hidden;
+}
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at 50% 0%,rgba(0,229,255,.15),transparent 70%);
+    pointer-events:none;
+}
+.hero h2{font-size:2.5rem;margin-bottom:15px}
+.hero p{color:var(--gris);font-size:1.1rem;margin-bottom:25px}
+
+/* BARRA DE BUSQUEDA DEL HERO:
+   Alinea el campo de texto de búsqueda y su respectivo botón en una sola línea limpia.
+    CAMBIO EN HTML: Aplica class="search-bar" al elemento contenedor <form>.
+*/
+.search-bar{
+    max-width:500px;
+    margin:0 auto;
+    display:flex;
+    gap:10px;
+}
+.search-bar input{flex:1}
+
+/* ==========================================================================
+   ===== SECCIONES Y CUADRÍCULAS (GRID) =====
+   ========================================================================== */
+/* TÍTULOS DE SECCIÓN:
+   Genera una línea divisoria inferior cian para delimitar bloques lógicos.
+    CAMBIO EN HTML: Añade class="section-title" a tus etiquetas <h2> secundarias.
+*/
+.section-title{
+    font-size:1.6rem;
+    margin:40px 0 20px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--borde);
+}
+
+/* SISTEMA DE DISEÑO GRID RESPONSIVO:
+   Distribuye elementos de forma automática en columnas según el espacio disponible en pantalla.
+    CAMBIO EN HTML: Debes combinar class="grid grid-4" (o grid-3, grid-2) en el 
+      contenedor que guarda tus tarjetas de productos para que se alineen solas.
+*/
+.grid{display:grid;gap:20px}
+.grid-4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+
+/* ==========================================================================
+   ===== TARJETAS DE PRODUCTOS (CARDS) =====
+   ========================================================================== */
+/* CONTENEDOR TARJETA:
+   Maqueta las cajas contenedoras de los productos con un efecto de levitación al pasar el ratón.
+    CAMBIO EN HTML: Aplica class="card" a tus etiquetas estructurales <article>.
+*/
+.card{
+    background:rgba(255,255,255,.04);
+    border:1px solid var(--borde);
+    border-radius:var(--radio);
+    overflow:hidden;
+    backdrop-filter:blur(12px);
+    transition:transform var(--transicion),box-shadow var(--transicion);
+    display:flex;
+    flex-direction:column;
+}
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 25px rgba(0,229,255,.35);
+}
+/* Recorta las fotos de los productos para que todas tengan proporciones idénticas sin deformarse */
+.card img{width:100%;height:250px;object-fit:cover;background:#0a0f1f}
+
+/* CUERPO DE LA TARJETA Y PRECIOS:
+    Organiza los textos descriptivos internos y resalta el costo del producto.
+    CAMBIO EN HTML: Usa class="card-body", class="card-price" y class="card-actions" 
+    dentro del <article> para estructurar el contenido de los artículos.
+*/
+.card-body{padding:16px;flex:1;display:flex;flex-direction:column}
+.card-body h3{font-size:1.0rem;margin-bottom:6px}
+.card-body p{color:var(--gris);font-size:.9rem;margin-bottom:12px;flex:1}
+.card-price{
+    font-family:'Rajdhani',sans-serif;
+    font-size:1.2rem;
+    font-weight:500;
+    color:var(--primario);
+    margin-bottom:10px;
+}
+.card-actions{display:flex;gap:8px;flex-wrap:wrap}
+.card-actions .btn{flex:1;font-size:.85rem;padding:8px 12px}
+
+/* ==========================================================================
+    ===== BOTONES INTERACTIVOS =====
+   ========================================================================== */
+/* BOTÓN POR DEFECTO (CIAN):
+    Afecta de forma global y añade bordes cian e interactividad con iluminación de fondo en hover.
+    CAMBIO EN HTML: Se aplica directo a la etiqueta <button> o enlaces con class="btn".
+*/
+button,.btn{
+    background:transparent;
+    color:var(--primario);
+    border:2px solid var(--primario);
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    font-family:'Rajdhani',sans-serif;
+    font-weight:600;
+    font-size:.95rem;
+    letter-spacing:.5px;
+    transition:all var(--transicion);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    text-decoration:none;
+}
+button:hover,.btn:hover{
+    background:var(--primario);
+    color:#000;
+    box-shadow:var(--sombra-neon);
+}
+
+/* VARIANTES DE BOTONES (SECUNDARIO, PELIGRO, ANCHO COMPLETO):
+    Cambian el código cromático del botón base para acciones secundarias o críticas (eliminar).
+    CAMBIO EN HTML: Se combina añadiendo las clases class="btn btn-secondary" o btn-danger o btn-full.
+*/
+.btn-secondary{border-color:var(--acento);color:var(--acento)}
+.btn-secondary:hover{background:var(--acento);color:#fff;box-shadow:0 0 15px rgba(124,58,237,.5)}
+.btn-danger{border-color:#ef4444;color:#ef4444}
+.btn-danger:hover{background:#ef4444;color:#fff}
+.btn-full{width:100%}
+
+/* ==========================================================================
+    ===== FORMULARIOS Y CAJAS DE ENTRADA =====
+   ========================================================================== */
+/* CÁPSULA DEL FORMULARIO:
+    Crea un bloque centrado y estético para Login, Registro o Contacto.
+    CAMBIO EN HTML: Añade class="form-container" al tag <form> o <div> contenedor.
+*/
+.form-container{
+    max-width:var(--form-width);
+    margin:30px auto;
+    padding:25px;
+    background:rgba(255,255,255,.04);
+    border:1px solid var(--borde);
+    border-radius:var(--radio);
+    backdrop-filter:blur(12px);
+    box-shadow:0 8px 32px rgba(0,0,0,.3);
+}
+.form-container h2{text-align:center;margin-bottom:8px;font-size:1.6rem}
+.form-container .subtitle{text-align:center;color:var(--gris);margin-bottom:25px;font-size:.9rem}
+
+/* GRUPOS DE CAMPO:
+    Separa verticalmente los pares de etiquetas e inputs.
+    CAMBIO EN HTML: Envuelve cada <label> y su <input> en un <div class="form-group">.
+*/
+.form-group{margin-bottom:18px}
+.form-group label{
+    display:block;
+    margin-bottom:6px;
+    font-size:.9rem;
+    color:var(--gris);
+    font-weight:500;
+}
+.form-container button,.form-container .btn{width:100%;margin-top:10px}
+
+/* ELEMENTOS INPUTS, TEXTAREAS Y SELECTS:
+    Estiliza de forma global las cajas donde digita el usuario asignándoles un sutil brillo enfocado.
+    CAMBIO EN HTML: Afecta directamente a etiquetas nativas <input>, <textarea>, <select>.
+*/
+input,textarea,select{
+    width:100%;
+    padding:12px 14px;
+    background:rgba(14, 0, 0, 0.05); /*Fondo semitransparente  de la seleccion de filtros*/
+    border:1px solid var(--borde);
+    color:var(--texto);
+    border-radius:8px;
+    font-family:'Inter',sans-serif;
+    font-size:.95rem;
+    transition:all var(--transicion);
+}
+input::placeholder,textarea::placeholder{color:var(--gris);opacity:.7}
+input:focus,textarea:focus,select:focus{
+    outline:none;
+    border-color:var(--primario);
+    box-shadow:0 0 12px rgba(0,229,255,.4);
+    background:rgb(48, 46, 46);
+}
+textarea{resize:vertical;min-height:100px}
+
+/* ==========================================================================
+    ===== TABLAS (CARRITO / ESPECIFICACIONES) =====
+   ========================================================================== */
+/* CONTENEDOR DE TABLAS CON DESPLAZAMIENTO:
+    Previene que las tablas rompan el diseño en smartphones agregando un scroll horizontal interno.
+    CAMBIO EN HTML: Envuelve tu etiqueta <table> dentro de un <div class="table-wrapper">.
+*/
+.table-wrapper{
+    overflow-x:auto;
+    border-radius:var(--radio);
+    border:1px solid var(--borde);
+    margin:20px 0;
+}
+/* Estilo general del elemento de rejillas de datos */
+table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.04)}
+th{
+    background:#001f3f;
+    color:var(--primario);
+    font-family:'Rajdhani',sans-serif;
+    font-weight:600;
+    text-align:left;
+    padding:14px 15px;
+}
+td{padding:12px 15px;border-bottom:1px solid var(--borde)}
+tr:last-child td{border-bottom:none}
+tr:hover{background:rgba(0,229,255,.05)}
+
+/* ==========================================================================
+    ===== PANEL DE FILTROS DE PRODUCTO =====
+   ========================================================================== */
+/* PANEL CONTENEDOR:
+    Caja organizadora superior o lateral para segmentar búsquedas en la tienda.
+    CAMBIO EN HTML: El bloque de filtros debe usar la clase class="filters".
+*/
+.filters{
+    background:rgba(255,255,255,.04);
+    border:1px solid var(--borde);
+    border-radius:var(--radio);
+    padding:25px;
+    margin-bottom:30px;
+}
+.filters h3{margin-bottom:15px;font-size:1.2rem}
+
+/* FILAS Y RANGOS DE PRECIO:
+    Distribuye horizontalmente las opciones y alinea los inputs de rango.
+    CAMBIO EN HTML: Emplea class="filter-row", class="filter-group" y class="price-range" 
+    para subdividir las opciones del buscador.
+*/
+.filter-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+    margin-bottom:15px;
+}
+.filter-group label{
+    display:block;
+    font-size:.85rem;
+    color:var(--gris);
+    margin-bottom:6px;
+}
+.price-range{display:flex;gap:10px;align-items:center}
+.price-range input{width:50%}
+
+/* ==========================================================================
+    ===== MAQUETACIÓN DE CONTACTO Y REDES SOCIALES =====
+   ========================================================================== */
+/* DISTRIBUCIÓN DE CONTACTO:
+    Separa el formulario de la información corporativa en dos bloques paralelos.
+    CAMBIO EN HTML: El elemento padre debe llevar la clase class="contact-layout".
+*/
+.contact-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    margin-top:30px;
+}
+/* Caja que resguarda datos como dirección o mapas */
+.contact-info{
+    background:rgba(255,255,255,.04);
+    border:1px solid var(--borde);
+    border-radius:var(--radio);
+    padding:30px;
+}
+.contact-info h3{margin-bottom:15px}
+.contact-info p{color:var(--gris);margin-bottom:10px;font-size:.95rem}
+
+/* ICONOS Y ENLACES SOCIALES:
+    Alinea y genera las burbujas circulares interactivas para las redes sociales.
+    CAMBIO EN HTML: El contenedor debe ser class="social-links" y cada enlace class="social-icon".
+*/
+.social-links{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+.social-icon{
+    width:45px;
+    height:45px;
+    border:1px solid var(--borde);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:all var(--transicion);
+    color:var(--texto);
+    background:rgba(255,255,255,.03);
+}
+.social-icon:hover{transform:translateY(-3px) scale(1.1)}
+
+/* IDENTIFICADORES DE COLOR SOCIAL (HOVER TEMÁTICO):
+    Pinta cada burbuja dinámicamente según la red social correspondiente mediante selectores de atributo.
+    CAMBIO EN HTML: ¡Súper Importante! Cada tag <a> debe llevar exactamente su atributo 'title' 
+    especificado (ej: title="WhatsApp", title="Facebook", title="Instagram" o title="GitHub").
+*/
+.social-icon:hover[title="WhatsApp"]{
+    background:#25D366;
+    border-color:#25D366;
+    color:#fff;
+    box-shadow:0 0 15px rgba(37,211,102,.6);
+}
+.social-icon:hover[title="Facebook"]{
+    background:#1877F2;
+    border-color:#1877F2;
+    color:#fff;
+    box-shadow:0 0 15px rgba(24,119,242,.6);
+}
+.social-icon:hover[title="Instagram"]{
+    background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+    border-color:#dc2743;
+    color:#fff;
+    box-shadow:0 0 15px rgba(220,39,67,.6);
+}
+.social-icon:hover[title="GitHub"]{
+    background:#333;
+    border-color:#00e5ff;
+    color:#fff;
+    box-shadow:0 0 15px rgba(0,229,255,.5);
+}
+
+/* ==========================================================================
+    ===== SECCIÓN CONFIGURACIÓN Y CHECKBOXES =====
+   ========================================================================== */
+/* ITEMS DE CONFIGURACIÓN:
+    Bloques limpios para opciones binarias o listas desplegables de ajustes.
+    CAMBIO EN HTML: Estructurar usando class="settings-section" y class="setting-item".
+*/
+.settings-section{
+    background:rgba(255,255,255,.04);
+    border:1px solid var(--borde);
+    border-radius:var(--radio);
+    padding:25px;
+    margin-bottom:20px;
+}
+.settings-section h3{
+    margin-bottom:20px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--borde);
+}
+.setting-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px solid rgba(0,229,255,.1);
+    flex-wrap:wrap;
+    gap:10px;
+}
+.setting-item:last-child{border-bottom:none}
+.setting-item label{color:var(--texto);font-weight:500}
+.setting-item select{max-width:200px}
+
+/* CASILLAS DE VERIFICACIÓN (CHECKBOX):
+    Ajusta el tamaño del puntero nativo de selección para hacerlo amigable al tacto.
+    CAMBIO EN HTML: Envuelve el input dentro de una etiqueta con class="checkbox-group".
+*/
+.checkbox-group{display:flex;flex-direction:column;gap:8px}
+.checkbox-group label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+    color:var(--texto);
+    font-weight:400;
+}
+.checkbox-group input[type="checkbox"]{
+    width:18px;
+    height:18px;
+    accent-color:var(--primario);
+    cursor:pointer;
+}
+
+/* ==========================================================================
+    ===== ELEMENTOS DEL CARRITO COMPACTO =====
+   ========================================================================== */
+/* TARJETA INDIVIDUAL DE CARRITO:
+    ormatea los artículos seleccionados en lista usando Flexbox o Grid para alinear miniatura, 
+    cantidad, precio y botón de remover.
+    CAMBIO EN HTML: Cada renglón de producto en la cesta debe poseer la clase class="cart-item".
+*/
+.cart-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:12px 15px;
+    background:rgba(255,255,255,.03);
+    border:1px solid var(--borde);
+    border-radius:var(--radio);
+    transition:all var(--transicion);
+}
+.cart-item:hover{
+    border-color:var(--primario);
+    box-shadow:0 0 10px rgba(0,229,255,.2);
+}
+/* Miniatura cuadrada del producto en el carro */
+.cart-item img{
+    width:60px;
+    height:60px;
+    object-fit:cover;
+    border-radius:8px;
+    flex-shrink:0;
+    border:1px solid var(--borde);
+}
+
+/* DETALLES INTERNOS DEL ITEM DEL CARRITO:
+    Controla los textos de títulos largos con elipsis (...) para evitar desbordes y estiliza precios.
+    CAMBIO EN HTML: Requiere los tags internos class="cart-item-info", class="cart-item-price", 
+    class="cart-item-qty" y class="cart-item-remove" correspondientemente.
+*/
+.cart-item-info{
+    flex:1;
+    min-width:0;
+}
+.cart-item-info h4{
+    font-size:.95rem;
+    margin-bottom:3px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.cart-item-info p{
+    color:var(--gris);
+    font-size:.8rem;
+    margin:0;
+}
+.cart-item-price{
+    font-family:'Rajdhani',sans-serif;
+    font-size:1.1rem;
+    font-weight:700;
+    color:var(--primario);
+    white-space:nowrap;
+    min-width:70px;
+    text-align:right;
+}
+/* Bloque selector numérico con botones "+" y "-" */
+.cart-item-qty{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    background:rgba(0,0,0,.2);
+    padding:4px 8px;
+    border-radius:6px;
+    border:1px solid var(--borde);
+}
+.cart-item-qty button{
+    width:24px;
+    height:24px;
+    padding:0;
+    font-size:.9rem;
+    line-height:1;
+    border:1px solid var(--borde);
+    background:rgba(0,229,255,.05);
+}
+.cart-item-qty input{
+    width:35px;
+    text-align:center;
+    padding:4px;
+    font-size:.85rem;
+    background:transparent;
+    border:none;
+    color:var(--texto);
+}
+.cart-item-remove{
+    width:32px;
+    height:32px;
+    padding:0;
+    font-size:.9rem;
+    border-radius:6px;
+    flex-shrink:0;
+}
+
+/* ==========================================================================
+    ===== COMPONENTE SEGUNDA VARIANTE GRID PARA ITEMS DEL CARRITO =====
+   ========================================================================== */
+/* DISEÑO ALTERNATIVO EN COLUMNAS CON FIJACIÓN POR GRID:
+    Sobreescribe o complementa la distribución en línea del carrito mediante celdas explícitas.
+*/
+.cart-item{
+    display:grid;
+    grid-template-columns:80px 1fr auto auto auto;
+    gap:15px;
+    align-items:center;
+    padding:15px;
+    background:rgba(255,255,255,.03);
+    border:1px solid var(--borde);
+    border-radius:var(--radio);
+    margin-bottom:10px;
+}
+.cart-item img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border-radius:8px;
+}
+.cart-item-info h4{font-size:1rem;margin-bottom:4px}
+.cart-item-info p{color:var(--gris);font-size:.85rem}
+.cart-item-qty{display:flex;align-items:center;gap:8px}
+.cart-item-qty button{width:30px;height:30px;padding:0;font-size:1rem}
+.cart-item-qty input{width:50px;text-align:center;padding:6px}
+
+/* ==========================================================================
+    ===== ACORDEONES MÉTODOS DE PAGO (DETAILS / SUMMARY) =====
+   ========================================================================== */
+/* BLOQUE ACORDEÓN DE PAGOS:
+    
+    CAMBIO EN HTML: Aplica class="payment-section", class="payment-methods" y class="payment-content" 
+    estructurado bajo los tags HTML5 nativos de colapso: <details> y <summary>.
+*/
+.payment-section{margin-top:20px}
+.payment-section h4{margin-bottom:12px;font-size:1.05rem}
+.payment-methods{display:flex;flex-direction:column;gap:10px}
+.payment-methods details{
+    background:rgba(255,255,255,.03);
+    border:1px solid var(--borde);
+    border-radius:8px;
+    overflow:hidden;
+    transition:all var(--transicion);
+}
+/* Destello perimetral cuando el acordeón se despliega */
+.payment-methods details[open]{
+    border-color:var(--primario);
+    box-shadow:0 0 10px rgba(0,229,255,.2);
+}
+.payment-methods summary{
+    padding:12px 15px;
+    cursor:pointer;
+    font-weight:600;
+    font-family:'Rajdhani',sans-serif;
+    color:var(--texto);
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    transition:all var(--transicion);
+}
+.payment-methods summary::-webkit-details-marker{display:none}
+/* Añade un prefijo triangular estético indicador de despliegue */
+.payment-methods summary::after{
+    content:"▸";
+    margin-left:auto;
+    color:var(--primario);
+    transition:transform var(--transicion);
+}
+.payment-methods details[open] summary::after{
+    transform:rotate(90deg);
+}
+.payment-methods summary:hover{
+    color:var(--primario);
+    background:rgba(0,229,255,.05);
+}
+/* Área interna revelada que alberga inputs de tarjetas o datos bancarios */
+.payment-content{
+    padding:15px;
+    border-top:1px solid var(--borde);
+    background:rgba(0,229,255,.02);
+}
+.payment-content .form-group:last-child{margin-bottom:10px}
+
+/* ==========================================================================
+    ===== FOOTER (PIE DE PÁGINA) =====
+   ========================================================================== */
+/* CONTENEDOR DE CIERRE DE PÁGINA:
+    Agrega un bloque opaco de fondo y marcas de autoría en el límite inferior de la web.
+    CAMBIO EN HTML: Se activa utilizando la etiqueta semántica <footer>.
+*/
+footer{
+    text-align:center;
+    padding:30px 20px;
+    margin-top:60px;
+    border-top:1px solid var(--borde);
+    background:rgba(0,0,0,.3);
+}
+footer p{color:var(--gris);font-size:.9rem;margin:5px 0}
+footer .footer-brand{color:var(--primario);font-weight:600;font-size:1.1rem}
+
+/* ==========================================================================
+    ===== MEDIA QUERIES (ADAPTACIÓN MÓVIL RESPONSIVE) =====
+   ========================================================================== */
+/* PRIMERA REGLA MÓVIL (PANTALLAS INTERMEDIAS Y MÓVILES):
+    Reorganiza los elementos del carrito cuando el espacio se estrecha.
+*/
+@media (max-width:768px){
+    .cart-layout{grid-template-columns:1fr}
+    .cart-item{
+        flex-wrap:wrap;
+        gap:10px;
+        padding:10px;
+    }
+    .cart-item img{width:50px;height:50px}
+    .cart-item-info{flex:1 1 calc(100% - 70px)}
+    .cart-item-price,
+    .cart-item-qty,
+    .cart-item-remove{margin-left:auto}
+}
+
+/* SEGUNDA REGLA MÓVIL (PANTALLAS PEQUEÑAS - SMARTPHONES):
+    Reajusta drásticamente los tamaños de fuentes gigantes, centra el menú de navegación en bloque, 
+    pasa el carro a filas verticales y optimiza paddings internos para evitar desbordamientos.
+*/
+@media (max-width:768px){
+    header{padding:15px 20px;justify-content:center;text-align:center}
+    nav{justify-content:center;gap:15px}
+    .hero h2{font-size:2.0rem}
+    .contact-layout{grid-template-columns:1fr}
+    .cart-layout{grid-template-columns:1fr}
+    .cart-item{grid-template-columns:60px 1fr;gap:10px}
+    .cart-item img{width:60px;height:60px}
+    .form-container{padding:25px 20px;margin:20px 15px}
+    .page-title{font-size:1.7rem}
+    .logo h1{font-size:2.2rem}
+
+
+    /* ===== ANIMACIÓN DEL FONDO TECNOLÓGICO ===== */
+    /*@keyframes movimientoFondo {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}*/
+}
