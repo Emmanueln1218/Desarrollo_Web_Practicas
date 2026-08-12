@@ -1,0 +1,185 @@
+<!--## 🛒 `carrito.html` (Con acordeones HTML en lugar de modales JS)-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EM DIGITAL - Carrito</title>
+    <link rel="stylesheet" href="css/Estilos.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/LogoEmpresa.png" alt="EM DIGITAL" class="logo-img">
+            </a>
+            <h1>EM DIGITAL</h1>
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="carrito.html" class="active">Carrito</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="acerca.html">Acerca de</a>
+            <a href="Configuracion.html">Configuración</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title">Carrito de Compras</h1>
+        <p class="page-subtitle">Revisa tus productos antes de pagar</p>
+
+        <<div class="cart-layout">
+    <div>
+        <h3 style="margin-bottom:15px">🛍️ Productos en tu carrito</h3>
+        
+        <div class="cart-items">
+            
+            <!-- ITEM 1 -->
+            <div class="cart-item">
+                <img src="img/index-laptop-gaming.jpg" alt="Laptop Gamer Pro">
+                <div class="cart-item-info">
+                    <h4>Laptop Gamer Pro</h4>
+                    <p>Intel Core i7 • RTX 3060 • 16GB RAM</p>
+                </div>
+                <div class="cart-item-qty">
+                    <button type="button">−</button>
+                    <input type="number" value="1" min="1">
+                    <button type="button">+</button>
+                </div>
+                <div class="cart-item-price">$1,500</div>
+                <a href="carrito.html" class="btn btn-danger cart-item-remove" title="Eliminar">🗑</a>
+            </div>
+
+            <!-- ITEM 2 (ejemplo) -->
+            <div class="cart-item">
+                <img src="img/index-fit.jpg" alt="Smartwatch FitBand 5">
+                <div class="cart-item-info">
+                    <h4>Smartwatch FitBand 5</h4>
+                    <p>Monitor de salud • GPS integrado</p>
+                </div>
+                <div class="cart-item-qty">
+                    <button type="button">−</button>
+                    <input type="number" value="2" min="1">
+                    <button type="button">+</button>
+                </div>
+                <div class="cart-item-price">$258</div>
+                <a href="carrito.html" class="btn btn-danger cart-item-remove" title="Eliminar">🗑</a>
+            </div>
+
+            <!-- ITEM 3 (ejemplo) -->
+            <div class="cart-item">
+                <img src="img/index-ssd.jpg" alt="SSD 1TB UltraSpeed">
+                <div class="cart-item-info">
+                    <h4>SSD 1TB UltraSpeed</h4>
+                    <p>Lectura 3500 MB/s • NVMe</p>
+                </div>
+                <div class="cart-item-qty">
+                    <button type="button">−</button>
+                    <input type="number" value="1" min="1">
+                    <button type="button">+</button>
+                </div>
+                <div class="cart-item-price">$119</div>
+                <a href="carrito.html" class="btn btn-danger cart-item-remove" title="Eliminar">🗑</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- RESUMEN DEL PEDIDO -->
+    <div class="cart-summary">
+        <h3>📋 Resumen del pedido</h3>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;color:var(--gris)">
+            <span>Subtotal</span><span>$1,877</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;color:var(--gris)">
+            <span>Envío</span><span style="color:var(--primario)">Gratis</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;color:var(--gris);border-bottom:1px solid var(--borde)">
+            <span>Impuestos</span><span>$0</span>
+        </div>
+        <div class="cart-total">
+            <span>Total</span><span>$1,877</span>
+        </div>
+
+        <!-- MÉTODOS DE PAGO -->
+        <div class="payment-section">
+            <h4>💳 Método de pago</h4>
+            <div class="payment-methods">
+                <details>
+                    <summary>💳 Tarjeta de crédito/débito</summary>
+                    <div class="payment-content">
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <label>Número de tarjeta</label>
+                                <input type="text" placeholder="0000 0000 0000 0000" required>
+                            </div>
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                                <div class="form-group">
+                                    <label>Fecha de expiración</label>
+                                    <input type="text" placeholder="MM/AA" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>CVV</label>
+                                    <input type="text" placeholder="123" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-full">Confirmar Pago</button>
+                        </form>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🅿️ PayPal</summary>
+                    <div class="payment-content">
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <label>Correo de PayPal</label>
+                                <input type="email" placeholder="tu@correo.com" required>
+                            </div>
+                            <button type="submit" class="btn-full">Confirmar Pago</button>
+                        </form>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🏦 Transferencia bancaria</summary>
+                    <div class="payment-content">
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <label>Banco</label>
+                                <select required>
+                                    <option value="">Seleccionar banco</option>
+                                    <option>Banco Popular</option>
+                                    <option>Banco Reservas</option>
+                                    <option>Scotiabank</option>
+                                    <option>BHD</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Número de referencia</label>
+                                <input type="text" placeholder="Referencia de la transferencia" required>
+                            </div>
+                            <button type="submit" class="btn-full">Confirmar Pago</button>
+                        </form>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>💵 Pago en efectivo</summary>
+                    <div class="payment-content">
+                        <p style="color:var(--gris);margin-bottom:15px">
+                            <strong style="color:var(--primario)">Monto a pagar: $1,877</strong><br>
+                            Realizarás el pago en efectivo al recibir el producto.
+                        </p>
+                        <form action="#" method="post">
+                            <button type="submit" class="btn-full">Confirmar Pedido</button>
+                        </form>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+</div>

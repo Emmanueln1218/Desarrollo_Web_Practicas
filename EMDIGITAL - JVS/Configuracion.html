@@ -1,0 +1,86 @@
+<!--## ⚙️ `Configuracion.html`-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EM DIGITAL - Configuración</title>
+    <link rel="stylesheet" href="css/Estilos.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/LogoEmpresa.png" alt="EM DIGITAL" class="logo-img">
+            </a>
+            <h1>EM DIGITAL</h1>
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="carrito.html">Carrito</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="acerca.html">Acerca de</a>
+            <a href="Documentacion/Documentacion.html">Documentación</a>
+            <a href="Configuracion.html" class="active">Configuración</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title">Configuración</h1>
+        <p class="page-subtitle">Ajusta tus preferencias dentro de EM DIGITAL</p>
+
+        <div class="form-container" style="max-width:700px">
+            <div class="settings-section" style="border:none;padding:0;background:none">
+                <h3>⚙️ Preferencias Generales</h3>
+                
+                <div class="setting-item">
+                    <label>Modo de visualización</label>
+                    <select>
+                        <option>Claro</option>
+                        <option selected>Oscuro</option>
+                        <option>Automático</option>
+                    </select>
+                </div>
+
+                <div class="setting-item">
+                    <label>Idioma</label>
+                    <select>
+                        <option selected>Español</option>
+                        <option>Inglés</option>
+                        <option>Portugués</option>
+                    </select>
+                </div>
+
+                <div class="setting-item" style="flex-direction:column;align-items:flex-start">
+                    <label style="margin-bottom:10px">Notificaciones</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" checked> Ofertas y promociones</label>
+                        <label><input type="checkbox" checked> Nuevos productos</label>
+                        <label><input type="checkbox" checked> Estado del pedido</label>
+                    </div>
+                </div>
+
+                <div class="setting-item">
+                    <label>Privacidad</label>
+                    <a href="#" class="btn">Ver opciones</a>
+                </div>
+            </div>
+
+            <form action="#" method="post">
+                <div style="display:flex;gap:10px;margin-top:25px;flex-wrap:wrap">
+                    <button type="submit" class="btn-full">Guardar cambios</button>
+                    <button type="reset" class="btn-full btn-secondary">Restablecer</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-brand">EM DIGITAL</p>
+        <p>San Cristóbal, República Dominicana</p>
+        <p>© 2026 EM DIGITAL. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
