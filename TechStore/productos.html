@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechStore Online - Productos</title>
+    <base href="./" />
+  </head>
+  <body>
+    <header>
+      <center>
+        <figure>
+          <img src="img/logo.png" alt="Logo de TechStore Online" width="120" />
+          <figcaption>TechStore Online</figcaption>
+        </figure>
+
+        <nav aria-label="Menú principal">
+          <a href="index.html">Inicio</a> |
+          <a href="productos.html">Productos</a> |
+          <a href="carrito.html">Carrito</a> |
+          <a href="contacto.html">Contacto</a> |
+          <a href="acerca.html">Acerca de</a> |
+          <a href="Configuracion ">Configuración</a>
+        </nav>
+      </center>
+      <hr />
+    </header>
+
+    <main>
+      <dialog id="modalDetalles">
+        <h2>🔍 Detalles del Producto</h2>
+
+        <p><strong>Nombre:</strong> Laptop Gamer Pro 15"</p>
+        <p>
+          <strong>Descripción:</strong> Equipo de alto rendimiento ideal para
+          gaming y trabajo pesado.
+        </p>
+        <p><strong>Precio:</strong> $999</p>
+        <p><strong>Garantía:</strong> 1 año</p>
+
+        <br />
+
+        <button onclick="document.getElementById('modalDetalles').close()">
+          Cerrar
+        </button>
+      </dialog>
+      
+
+      <!-- TABLA PRINCIPAL: FILTROS + PRODUCTOS -->
+      <table width="100%" border="0" cellspacing="10">
+        <tr>
+          <!-- FILTROS -->
+          <td width="25%" valign="top" bgcolor="#eaeaea">
+            <aside>
+              <center><h2 style="margin: 0">🔍 Filtros</h2></center>
+              <hr />
+
+              <form method="get" action="productos.html">
+                <!-- PRECIO -->
+                <fieldset>
+                  <legend><strong>💲 Precio</strong></legend>
+
+                  <!-- PRECIO MÍNIMO -->
+                  <label for="precio-min">Mínimo:</label><br />
+                  <input
+                    id="precio-min"
+                    name="precio-min"
+                    type="number"
+                    list="precios-min"
+                    placeholder="0"
+                  />
+                  <datalist id="precios-min">
+                    <option value="50"></option>
+                    <option value="100"></option>
+                    <option value="200"></option>
+                    <option value="300"></option>
+                  </datalist>
+                  <br /><br />
+
+                  <!-- PRECIO MÁXIMO -->
+                  <label for="precio-max">Máximo:</label><br />
+                  <input
+                    id="precio-max"
+                    name="precio-max"
+                    type="number"
+                    list="precios-max"
+                    placeholder="1000"
+                  />
+                  <datalist id="precios-max">
+                    <option value="400"></option>
+                    <option value="600"></option>
+                    <option value="800"></option>
+                    <option value="1000"></option>
+                    <option value="1200"></option>
+                    <option value="1400"></option>
+                    <option value="1600"></option>
+                    <option value="2000"></option>
+                  </datalist>
+                </fieldset>
+
+                <br />
+
+                <!-- MARCA -->
+                <fieldset>
+                  <legend><strong>🏷️ Marca</strong></legend>
+
+                  <label for="marca">Seleccionar marca:</label><br />
+                  <select id="marca" name="marca">
+                    <option value="">Todas</option>
+                    <option>Samsung</option>
+                    <option>Apple</option>
+                    <option>Dell</option>
+                    <option>HP</option>
+                    <option>Lenovo</option>
+                    <option>Asus</option>
+                    <option>MSI</option>
+                    <option>Acer</option>
+                    <option>Razer</option>
+                    <option>Logitech</option>
+                    <option>Sony</option>
+                    <option>LG</option>
+                    <option>Huawei</option>
+                    <option>Xiaomi</option>
+                  </select>
+                </fieldset>
+
+                <br />
+
+                <!-- CATEGORÍA -->
+                <fieldset>
+                  <legend><strong>📦 Categoría</strong></legend>
+
+                  <label for="categoria">Categoría:</label><br />
+                  <input
+                    id="categoria"
+                    list="lista-categorias"
+                    placeholder="Escribe o selecciona"
+                  />
+
+                  <datalist id="lista-categorias">
+                    <option value="Laptops"></option>
+                    <option value="Smartphones"></option>
+                    <option value="Accesorios"></option>
+                    <option value="Desktop"></option>
+                    <option value="Gaming"></option>
+                    <option value="Audio"></option>
+                    <option value="Video"></option>
+                    <option value="Wearables"></option>
+                    <option value="Redes"></option>
+                    <option value="Almacenamiento"></option>
+                  </datalist>
+                </fieldset>
+
+                <center>
+                  <button type="submit">Aplicar filtros</button>
+                </center>
+              </form>
+            </aside>
+          </td>
+
+          <!-- PRODUCTOS -->
+          <td width="75%" valign="top">
+            <section>
+              <center><h2>Todos los productos disponibles</h2></center>
+
+              <table width="100%" border="0" cellspacing="20">
+                <tr>
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Laptop Gamer Pro</h3>
+                      <img
+                        src="img/laptop1.jpg"
+                        alt="Laptop Gamer Pro"
+                        width="200"
+                      />
+                      <p>Potente laptop para juegos y tareas exigentes.</p>
+                      <p>Precio: <strong>$1500</strong></p>
+
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html">
+                        <button type="button">Agregar al carrito</button>
+                      </a>
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Smartwatch FitBand 5</h3>
+                      <img src="img/watch1.jpg" width="200" />
+                      <p>Monitoreo de salud y GPS integrado.</p>
+                      <p>Precio: <strong>$129</strong></p>
+
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html">
+                        <button type="button">Agregar al carrito</button>
+                      </a>
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>SSD 1TB UltraSpeed</h3>
+                      <img src="img/ssd1.jpg" width="200" />
+                      <p>Lectura de 3500 MB/s.</p>
+                      <p>Precio: <strong>$119</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+
+                      <a href="carrito.html">
+                        <button type="button">Agregar al carrito</button>
+                      </a>
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Smartphone Galaxy X</h3>
+                      <img
+                        src="img/phone1.jpg"
+                        alt="Smartphone Galaxy X"
+                        width="200"
+                      />
+                      <p>Teléfono inteligente de última generación.</p>
+                      <p>Precio: <strong>$799</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+
+                      <a href="carrito.html">
+                        <button type="button">Agregar al carrito</button>
+                      </a>
+                    </article>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Teclado Mecánico RGB</h3>
+                      <img
+                        src="img/teclado.jpg"
+                        alt="Teclado Mecánico"
+                        width="200"
+                      />
+                      <p>Teclado retroiluminado para respuesta rápida.</p>
+                      <p>Precio: <strong>$89</strong></p>
+
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+
+                      <a href="carrito.html">
+                        <button type="button">Agregar al carrito</button>
+                      </a>
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Smartphone Pro Max 12</h3>
+                      <img src="img/phone2.jpg" width="200" />
+                      <p>Pantalla AMOLED y cámara de 108 MP.</p>
+                      <p>Precio: <strong>$899</strong></p>
+
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html">
+                        <button type="button">Agregar al carrito</button>
+                      </a>
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Laptop UltraBook X15</h3>
+                      <img src="img/laptop2.jpg" width="200" />
+                      <p>Laptop ligera con batería de larga duración.</p>
+                      <p>Precio: <strong>$1099</strong></p>
+
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html">
+                        <button type="button">Agregar al carrito</button>
+                      </a>
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Audífonos Inalámbricos</h3>
+                      <img
+                        src="img/audifonos.jpg"
+                        alt="Audífonos Inalámbricos"
+                        width="200"
+                      />
+                      <p>Cancelación de ruido y batería de larga duración.</p>
+                      <p>Precio: <strong>$149</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html">
+                        <button type="button">Agregar al carrito</button>
+                      </a>
+                    </article>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Laptop Gamer Shadow 17"</h3>
+                      <img src="img/laptop3.jpg" width="200" />
+                      <p>RTX 4060 y pantalla 144Hz.</p>
+                      <p>Precio: <strong>$1599</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html">
+                        <button type="button">Agregar al carrito</button>
+                      </a>
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Smartphone Pro Lite</h3>
+                      <img src="img/phone3.jpg" width="200" />
+                      <p>Compacto, rápido y económico.</p>
+                      <p>Precio: <strong>$299</strong></p>
+
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html">
+                        <button type="button">Agregar al carrito</button>
+                      </a>
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Auriculares Studio Pro</h3>
+                      <img src="img/audifonos2.jpg" width="200" />
+                      <p>Cancelación activa de ruido.</p>
+                      <p>Precio: <strong>$199</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html">
+                        <button type="button">Agregar al carrito</button>
+                      </a>
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Cámara 4K ActionCam</h3>
+                      <img src="img/camara1.jpg" width="200" />
+                      <p>Ideal para deportes extremos.</p>
+                      <p>Precio: <strong>$249</strong></p>
+
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html">
+                        <button type="button">Agregar al carrito</button>
+                      </a>
+                    </article>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Webcam Full HD 1080p</h3>
+                      <img src="img/webcam1.jpg" width="200" />
+                      <p>Ideal para videollamadas.</p>
+                      <p>Precio: <strong>$59</strong></p>
+
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html">
+                        <button type="button">Agregar al carrito</button>
+                      </a>
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Micrófono Podcast Pro</h3>
+                      <img src="img/microfono1.jpg" width="200" />
+                      <p>Calidad profesional para grabaciones.</p>
+                      <p>Precio: <strong>$129</strong></p>
+
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html">
+                        <button type="button">Agregar al carrito</button>
+                      </a>
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Tarjeta SD 256GB</h3>
+                      <img src="img/sd1.jpg" width="200" />
+                      <p>Alta velocidad para cámaras.</p>
+                      <p>Precio: <strong>$45</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html">
+                        <button type="button">Agregar al carrito</button>
+                      </a>
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Hub USB 7 Puertos</h3>
+                      <img src="img/hub1.jpg" width="200" />
+                      <p>Expande tus conexiones fácilmente.</p>
+                      <p>Precio: <strong>$25</strong></p>
+
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html">
+                        <button type="button">Agregar al carrito</button>
+                      </a>
+                    </article>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Bocinas Bluetooth Bass+</h3>
+                      <img src="img/bocinas1.jpg" width="200" />
+                      <p>Sonido envolvente con graves potentes.</p>
+                      <p>Precio: <strong>$79</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html"
+                        ><button type="button">Agregar al carrito</button></a
+                      >
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Monitor 4K Vision 27"</h3>
+                      <img src="img/monitor1.jpg" width="200" />
+                      <p>Resolución UHD con colores vibrantes.</p>
+                      <p>Precio: <strong>$329</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html"
+                        ><button type="button">Agregar al carrito</button></a
+                      >
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Smartwatch FitBand 5</h3>
+                      <img src="img/watch1.jpg" width="200" />
+                      <p>Monitoreo de salud y GPS integrado.</p>
+                      <p>Precio: <strong>$129</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html"
+                        ><button type="button">Agregar al carrito</button></a
+                      >
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Router WiFi AX3000</h3>
+                      <img src="img/router1.jpg" width="200" />
+                      <p>WiFi 6 de alta velocidad.</p>
+                      <p>Precio: <strong>$159</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html"
+                        ><button type="button">Agregar al carrito</button></a
+                      >
+                    </article>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>One Plus 9T PRO</h3>
+                      <img src="img/phone3.jpg" width="200" />
+                      <p>Compacto, rápido y económico.</p>
+                      <p>Precio: <strong>$450</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+
+                      <a href="carrito.html"
+                        ><button type="button">Agregar al carrito</button></a
+                      >
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Auriculares Studio Pro</h3>
+                      <img src="img/audifonos2.jpg" width="200" />
+                      <p>Cancelación activa de ruido.</p>
+                      <p>Precio: <strong>$199</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html"
+                        ><button type="button">Agregar al carrito</button></a
+                      >
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Cámara 4K ActionCam</h3>
+                      <img src="img/camara1.jpg" width="200" />
+                      <p>Ideal para deportes extremos.</p>
+                      <p>Precio: <strong>$249</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html"
+                        ><button type="button">Agregar al carrito</button></a
+                      >
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>USB 256GB Kinstong</h3>
+                      <img src="img/usb1.jpg" width="200" />
+                      <p>Compacta y resistente.</p>
+                      <p>Precio: <strong>$19</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html"
+                        ><button type="button">Agregar al carrito</button></a
+                      >
+                    </article>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Laptop Gamer Shadow 17"</h3>
+                      <img src="img/laptop3.jpg" width="200" />
+                      <p>RTX 4060 y pantalla 144Hz.</p>
+                      <p>Precio: <strong>$1599</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html"
+                        ><button type="button">Agregar al carrito</button></a
+                      >
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Smartphone Huawei P30 Lite</h3>
+                      <img src="img/phone3.jpg" width="200" />
+                      <p>Compacto, rápido y económico.</p>
+                      <p>Precio: <strong>$299</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html"
+                        ><button type="button">Agregar al carrito</button></a
+                      >
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>Auriculares Studio Pro</h3>
+                      <img src="img/audifonos2.jpg" width="200" />
+                      <p>Cancelación activa de ruido.</p>
+                      <p>Precio: <strong>$199</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html"
+                        ><button type="button">Agregar al carrito</button></a
+                      >
+                    </article>
+                  </td>
+
+                  <td align="center" bgcolor="#f9f9f9">
+                    <article>
+                      <h3>USB 128GB Titan</h3>
+                      <img src="img/usb1.jpg" width="200" />
+                      <p>Compacta y resistente.</p>
+                      <p>Precio: <strong>$19</strong></p>
+                      <button
+                        onclick="
+                          document.getElementById('modalDetalles').showModal()
+                        "
+                      >
+                        Ver detalles
+                      </button>
+                      <a href="carrito.html"
+                        ><button type="button">Agregar al carrito</button></a
+                      >
+                    </article>
+                  </td>
+                </tr>
+              </table>
+            </section>
+          </td>
+        </tr>
+      </table>
+
+      <dialog id="modalDetalles">
+        <h2>Detalles del producto</h2>
+        <p>Este es un modal usando &lt;dialog&gt;.</p>
+        <button onclick="document.getElementById('modalDetalles').close()">
+          Cerrar
+        </button>
+      </dialog>
+    </main>
+
+    <footer>
+      <hr />
+      <center>
+        <address>TechStore Online, San Cristóbal, República Dominicana</address>
+        <small
+          >&copy; 2026 TechStore Online. Todos los derechos reservados.</small
+        >
+      </center>
+    </footer>
+  </body>
+</html>

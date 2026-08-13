@@ -6,7 +6,6 @@ Sistema de gestión de citas para un taller de motocicletas.
 
 - **Requisitos completos**: [DOCUMENTO_REQUISITOS.md](DOCUMENTO_REQUISITOS.md)
 - **Diagrama de base de datos**: [er_diagram.md](er_diagram.md)
-- **Script SQL**: [sql/schema.sql](sql/schema.sql)
 - **Documentación de APIs**: [API_DOCS.md](API_DOCS.md)
 - **Guía de instalación**: [INSTALLATION_GUIDE.md](INSTALLATION_GUIDE.md)
 
@@ -25,8 +24,6 @@ Sistema de gestión de citas para un taller de motocicletas.
 ├── src/main/resources/
 │   ├── static/           # Frontend HTML/CSS/JS
 │   └── application.properties
-├── sql/
-│   └── schema.sql        # Script de base de datos
 └── pom.xml               # Dependencias Maven
 ```
 
@@ -89,17 +86,6 @@ DELETE /api/appointments/{id} - Cancelar cita
 POST   /api/payments          - Registrar pago
 GET    /api/payments          - Listar pagos
 DELETE /api/payments/{id}     - Anular pago
-```
-
-## Subir a GitHub
-
-```bash
-git init
-git add .
-git commit -m "Initial MotoCitas project with business validations"
-git branch -M main
-git remote add origin <your-repo-url>
-git push -u origin main
 ```
 
 ## Próximas Fases

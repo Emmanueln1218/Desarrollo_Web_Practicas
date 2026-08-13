@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechStore Online - Inicio</title>
+    <base href="./" />
+  </head>
+  
+<dialog id="modalCategorias">
+  <h2>📦 Ver productos</h2>
+  <p>¿Deseas ver los productos de esta categoría?</p>
+
+  <button onclick="document.getElementById('modalCategorias').close()">
+    Cancelar
+  </button>
+
+  <a href="productos.html">
+    <button type="button">Sí, ver productos</button>
+  </a>
+</dialog>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <center>
+        <figure>
+          <img src="img/logo.png" alt="Logo de TechStore Online" width="120" />
+          <figcaption><strong>TechStore Online</strong></figcaption>
+        </figure>
+      </center>
+
+      <!-- MENÚ -->
+      <nav aria-label="Menú principal">
+        <table align="center" cellspacing="10">
+          <tr>
+            <td>
+              <a href="index.html"><strong>Inicio</strong></a>
+            </td>
+            <td><a href="productos.html">Productos</a></td>
+            <td><a href="carrito.html">Carrito</a></td>
+            <td><a href="contacto.html">Contacto</a></td>
+            <td><a href="acerca.html">Acerca de</a></td>
+            <td><a href="Configuracion.html">Configuración</a></td>
+          </tr>
+        </table>
+      </nav>
+
+      <!-- BUSCADOR -->
+      <center>
+        <form
+          action="productos.html"
+          method="get"
+          aria-label="Buscar productos"
+        >
+          <label for="busqueda">Buscar</label>
+          <input
+            id="busqueda"
+            type="search"
+            name="q"
+            placeholder="Buscar productos..."
+            required
+          />
+
+    <main>
+      <!-- BANNER -->
+      <section>
+        <center>
+          <h1>✨ Bienvenido a TechStore Online</h1>
+          <p>Las mejores ofertas en tecnología.</p>
+
+          <figure>
+            <img
+              src="img/banner.jpg"
+              alt="Promoción de productos tecnológicos"
+              width="80%"
+            />
+            <figcaption>Oferta especial en laptops y smartphones.</figcaption>
+          </figure>
+
+          <!-- BOTÓN PARA MODAL -->
+          <br /><br />
+          <button onclick="document.getElementById('modalInicio').showModal()">
+            Más información
+          </button>
+        </center>
+      </section>
+
+      <!-- CATEGORÍAS -->
+      <section>
+        <center><h2>📦 Categorías</h2></center>
+
+        <table width="80%" align="center" cellspacing="20">
+          <tr>
+            <td align="center">
+<a href="#" onclick="document.getElementById('modalCategorias').showModal()">              <article>
+                <h3>Laptops</h3>
+                <p>Equipos portátiles para trabajo y gaming.</p>
+              </article>
+            </td>
+
+            <td align="center">
+<a href="#" onclick="document.getElementById('modalCategorias').showModal()">              <article>
+                <h3>Smartphones</h3>
+                <p>Teléfonos inteligentes de última generación.</p>
+              </article>
+            </td>
+
+            <td align="center">
+<a href="#" onclick="document.getElementById('modalCategorias').showModal()">              <article>
+                <h3>Accesorios</h3>
+                <p>Teclados, mouse, audífonos y más.</p>
+              </article>
+            </td>
+
+            <td align="center">
+<a href="#" onclick="document.getElementById('modalCategorias').showModal()">              <article>
+                <h3>Gaming</h3>
+                <p>Consolas y periféricos gamer.</p>
+              </article>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- PRODUCTOS DESTACADOS -->
+      <section>
+        <center><h2>🔥 Productos destacados</h2></center>
+
+        <table width="90%" align="center" cellspacing="20">
+          <tr>
+            <td align="center" bgcolor="#f9f9f9">
+              <article>
+                <h3>Lenovo  Thinpak X390 i7"</h3>
+                <img src="img/laptop1.jpg" alt="Laptop Gamer Pro" width="200" />
+                <p>Potente laptop para gaming.</p>
+                <p>Precio: <strong>$999</strong> <mark>20% OFF</mark></p>
+                <a href="carrito.html">
+                  <button type="button">Agregar al carrito</button>
+                </a>
+              </article>
+            </td>
+
+            <td align="center" bgcolor="#f9f9f9">
+              <article>
+                <h3>Samsung Galaxy S26 Ultra</h3>
+                <img
+                  src="img/phone1.jpg"
+                  alt="Smartphone Galaxy X"
+                  width="200"
+                />
+                <p>Teléfono inteligente de última generación.</p>
+                <p>Precio: <strong>$799</strong></p>
+                <a href="carrito.html">
+                  <button type="button">Agregar al carrito</button>
+                </a>
+              </article>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" bgcolor="#f9f9f9">
+              <article>
+                <h3>Teclado Mecánico RGB</h3>
+                <img src="img/teclado.jpg" alt="Teclado Mecánico" width="200" />
+                <p>Teclado retroiluminado para respuesta rápida.</p>
+                <p>Precio: <strong>$89</strong></p>
+                <a href="carrito.html">
+                  <button type="button">Agregar al carrito</button>
+                </a>
+              </article>
+            </td>
+
+            <td align="center" bgcolor="#f9f9f9">
+              <article>
+                <h3>Iphone 17 Pro Max</h3>
+                <img
+                  src="img/audifonos.jpg"
+                  alt="Audífonos Inalámbricos"
+                  width="200"
+                />
+                <p>Teléfono inteligente de última generación.</p>
+                <p>Precio: <strong>$149</strong></p>
+                <a href="carrito.html">
+                  <button type="button">Agregar al carrito</button>
+                </a>
+              </article>
+            </td>
+          </tr>
+        </table>
+      </section>
+    </main>
+
+    <!--  MODAL FUTURISTA  -->
+    <dialog id="modalInicio">
+      <h2>🚀 Bienvenido a TechStore</h2>
+      <p>
+        Explora nuestras categorías, descubre ofertas exclusivas y disfruta de
+        la mejor tecnología.
+      </p>
+
+      <button onclick="document.getElementById('modalInicio').close()">
+        Cerrar
+      </button>
+    </dialog>
+    
+
+    <footer>
+      <hr />
+      <center>
+        <address>TechStore Online, San Cristóbal, República Dominicana</address>
+        <small
+          >&copy; 2026 TechStore Online. Todos los derechos reservados.</small
+        >
+      </center>
+    </footer>
+  </body>
+</html>

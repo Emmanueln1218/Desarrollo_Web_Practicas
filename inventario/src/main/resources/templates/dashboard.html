@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Inventario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<nav th:replace="~{fragments/layout :: navbar}"></nav>
+
+<div class="container-fluid py-4">
+    <h2 class="mb-4 fw-bold">
+        <i class="bi bi-speedometer2 text-primary me-2"></i>Dashboard
+    </h2>
+
+    <!-- ===== TARJETAS DE ESTADÍSTICAS ===== -->
+    <div class="row g-4 mb-4">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 card-stat bg-primary text-white">
+                <div class="card-body d-flex align-items-center">
+                    <i class="bi bi-box-fill fs-1 me-3 opacity-75"></i>
+                    <div>
+                        <h6 class="card-subtitle mb-1 opacity-75">Total Productos</h6>
+                        <h2 class="card-title mb-0" th:text="${totalProductos}">0</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 card-stat bg-success text-white">
+                <div class="card-body d-flex align-items-center">
+                    <i class="bi bi-archive-fill fs-1 me-3 opacity-75"></i>
+                    <div>
+                        <h6 class="card-subtitle mb-1 opacity-75">Unidades en Stock</h6>
+                        <h2 class="card-title mb-0" th:text="${totalUnidades}">0</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 card-stat bg-info text-white">
+                <div class="card-body d-flex align-items-center">
+                    <i class="bi bi-tags-fill fs-1 me-3 opacity-75"></i>
+                    <div>
+                        <h6 class="card-subtitle mb-1 opacity-75">Categorías</h6>
+                        <h2 class="card-title mb-0" th:text="${totalCategorias}">0</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ALERTA STOCK BAJO ===== -->
+    <div th:if="${!productosStockBajo.isEmpty()}" class="alert alert-warning shadow-sm d-flex align-items-center" role="alert">
+        <i class="bi bi-exclamation-triangle-fill fs-4 me-3"></i>
+        <div>
+            <strong>¡Atención!</strong> Hay
+            <span class="badge bg-danger" th:text="${productosStockBajo.size()}"></span>
+            producto(s) con stock bajo.
+            <a th:href="@{/productos}" class="alert-link ms-2">Ver productos →</a>
+        </div>
+    </div>
+
+    <!-- ===== TABLA ÚLTIMOS PRODUCTOS ===== -->
+    <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
+            <h5 class="mb-0 fw-bold"><i class="bi bi-list-ul me-2"></i>Últimos Productos</h5>
+            <a th:href="@{/productos/nuevo}" class="btn btn-primary btn-sm">
+                <i class="bi bi-plus-lg me-1"></i>Nuevo
+            </a>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0 align-middle">
+                    <thead class="table-light">
+                    <tr>
+                        <th>SKU</th>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Estado</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="p : ${ultimosProductos}">
+                        <td><code th:text="${p.sku}"></code></td>
+                        <td class="fw-semibold" th:text="${p.nombre}"></td>
+                        <td>
+                                <span class="badge bg-secondary"
+                                      th:text="${p.categoria != null ? p.categoria.nombre : 'Sin categoría'}"></span>
+                        </td>
+                        <td th:text="'$' + ${#numbers.formatDecimal(p.precio, 1, 2)}"></td>
+                        <td th:text="${p.cantidad}"></td>
+                        <td>
+                                <span th:if="${p.stockBajo}" class="badge bg-danger">
+                                    <i class="bi bi-exclamation-circle me-1"></i>Stock Bajo
+                                </span>
+                            <span th:unless="${p.stockBajo}" class="badge bg-success">
+                                    <i class="bi bi-check-circle me-1"></i>Normal
+                                </span>
+                        </td>
+                    </tr>
+                    <tr th:if="${ultimosProductos.isEmpty()}">
+                        <td colspan="6" class="text-center text-muted py-4">
+                            No hay productos registrados aún.
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="~{fragments/layout :: footer}"></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
