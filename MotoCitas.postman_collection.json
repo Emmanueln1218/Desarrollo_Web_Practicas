@@ -1,0 +1,167 @@
+{
+  "info": {
+    "name": "MotoCitas API",
+    "description": "Colección de APIs de MotoCitas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Clients",
+      "item": [
+        {
+          "name": "Create Client",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": {"raw": "{{base_url}}/api/clients", "host": ["{{base_url}}"], "path": ["api", "clients"]},
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Juan Pérez\",\n  \"email\": \"juan@example.com\",\n  \"phone\": \"3001234567\",\n  \"document\": \"12345678\"\n}"
+            }
+          }
+        },
+        {
+          "name": "List Clients",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{base_url}}/api/clients", "host": ["{{base_url}}"], "path": ["api", "clients"]}
+          }
+        },
+        {
+          "name": "Search Clients",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{base_url}}/api/clients?q=Juan", "host": ["{{base_url}}"], "path": ["api", "clients"], "query": [{"key": "q", "value": "Juan"}]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "Motorcycles",
+      "item": [
+        {
+          "name": "Create Motorcycle",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": {"raw": "{{base_url}}/api/motorcycles", "host": ["{{base_url}}"], "path": ["api", "motorcycles"]},
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"client\": {\"id\": 1},\n  \"plate\": \"ABC-123\",\n  \"brand\": \"Honda\",\n  \"model\": \"CB500\",\n  \"year\": 2022\n}"
+            }
+          }
+        },
+        {
+          "name": "List Motorcycles",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{base_url}}/api/motorcycles", "host": ["{{base_url}}"], "path": ["api", "motorcycles"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "item": [
+        {
+          "name": "Create Service",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": {"raw": "{{base_url}}/api/services", "host": ["{{base_url}}"], "path": ["api", "services"]},
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Cambio de aceite\",\n  \"price\": 50000\n}"
+            }
+          }
+        },
+        {
+          "name": "List Services",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{base_url}}/api/services", "host": ["{{base_url}}"], "path": ["api", "services"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "Appointments",
+      "item": [
+        {
+          "name": "Create Appointment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": {"raw": "{{base_url}}/api/appointments", "host": ["{{base_url}}"], "path": ["api", "appointments"]},
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clientId\": 1,\n  \"motorcycleId\": 1,\n  \"serviceId\": 1,\n  \"scheduledAt\": \"2026-08-15T10:00:00\"\n}"
+            }
+          }
+        },
+        {
+          "name": "List Appointments",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{base_url}}/api/appointments", "host": ["{{base_url}}"], "path": ["api", "appointments"]}
+          }
+        },
+        {
+          "name": "Update Appointment Status",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": {"raw": "{{base_url}}/api/appointments/1", "host": ["{{base_url}}"], "path": ["api", "appointments", "1"]},
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"COMPLETED\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Payments",
+      "item": [
+        {
+          "name": "Create Payment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": {"raw": "{{base_url}}/api/payments", "host": ["{{base_url}}"], "path": ["api", "payments"]},
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appointmentId\": 1,\n  \"amount\": 50000,\n  \"method\": \"CASH\"\n}"
+            }
+          }
+        },
+        {
+          "name": "List Payments",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "{{base_url}}/api/payments", "host": ["{{base_url}}"], "path": ["api", "payments"]}
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+}
